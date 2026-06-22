@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional - Software Engineer & Network Tech</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#070a13',
+                            card: '#111827',
+                            accent: '#6366F1',
+                            accentLight: '#818CF8',
+                            glow: 'rgba(99, 102, 241, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070a13;
+        }
+        /* Kustomisasi scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070a13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366F1;
+        }
+        /* Animasi muncul saat scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Animasi mengambang lambat */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .floating-avatar {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden">
+
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#070a13]/80 backdrop-blur-md border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">
+                PORTFOLIO<span class="text-indigo-500">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-indigo-400 transition-colors duration-200">Home</a>
+                <a href="#about" class="hover:text-indigo-400 transition-colors duration-200">Tentang</a>
+                <a href="#projects" class="hover:text-indigo-400 transition-colors duration-200">Proyek</a>
+                <a href="#experience" class="hover:text-indigo-400 transition-colors duration-200">Pengalaman</a>
+                <a href="#contact" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 shadow-lg shadow-indigo-600/30">Hubungi Saya</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#070a13] border-b border-gray-800/80 px-6 py-4 space-y-4">
+            <a href="#home" class="block text-gray-300 hover:text-indigo-400 py-2">Home</a>
+            <a href="#about" class="block text-gray-300 hover:text-indigo-400 py-2">Tentang</a>
+            <a href="#projects" class="block text-gray-300 hover:text-indigo-400 py-2">Proyek</a>
+            <a href="#experience" class="block text-gray-300 hover:text-indigo-400 py-2">Pengalaman</a>
+            <a href="#contact" class="block w-full text-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full filter blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full filter blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full py-12">
+            <!-- Left Info -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-semibold tracking-wide border border-indigo-500/20 inline-block">
+                    Halo, Selamat Datang di Portofolio Saya!
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight">
+                    Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500">Irgiawan al bukhori</span>
+                </h1>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-400">
+                    Keahlian: <span id="typing-text" class="text-indigo-400 border-r-2 border-indigo-400 pr-1"></span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Saya mahir dalam pemrograman <strong class="text-white">C++</strong>, dan pengembangan frontend web dengan <strong class="text-white">HTML</strong>. Selain itu, saya memiliki pengalaman praktis dalam infrastruktur jaringan komputer.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-lg shadow-indigo-600/30 transition-all text-center">
+                        Lihat Proyek <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gray-800/80 hover:bg-gray-700 text-gray-300 font-medium rounded-xl transition-all border border-gray-700 text-center">
+                        Hubungi Saya
+                    </a>
+                </div>
+
+                <!-- Personal Stats -->
+                <div class="flex items-center justify-center lg:justify-start space-x-8 pt-8 border-t border-gray-800">
+                    <div>
+                        <p class="text-3xl font-bold text-white">1+</p>
+                        <p class="text-xs sm:text-sm text-gray-500">Tahun Pengalaman</p>
+                    </div>
+                    <div class="w-[1px] h-10 bg-gray-800"></div>
+                    <div>
+                        <p class="text-3xl font-bold text-white">5+</p>
+                        <p class="text-xs sm:text-sm text-gray-500">Proyek & Lab Selesai</p>
+                    </div>
+                    <div class="w-[1px] h-10 bg-gray-800"></div>
+                    <div>
+                        <p class="text-3xl font-bold text-white">3+</p>
+                        <p class="text-xs sm:text-sm text-gray-500">Teknologi Dikuasai</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Profile Avatar with Glowing Animation -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96 floating-avatar">
+                    <!-- Spinning glowing border -->
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-spin blur-[8px]" style="animation-duration: 12s;"></div>
+                    <!-- Inner container -->
+                    <div class="absolute inset-2 bg-brand-dark rounded-full overflow-hidden border-4 border-brand-dark flex flex-col items-center justify-center">
+                        <!-- Profile Image -->
+                        <img id="profile-img" src="irgi.jpg" alt="Irgi" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="handleImageError()">
+                        
+                        <!-- Fallback Icon if image fails to load -->
+                        <div id="avatar-fallback" class="hidden text-center p-6">
+                            <i class="fa-solid fa-laptop-code text-7xl text-indigo-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white">Irgi</h3>
+                            <p class="text-gray-400 text-xs mt-1">Software Engineer & Network Tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-[#0a0e1a] reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-indigo-400 font-semibold tracking-wider uppercase text-sm">Tentang Saya</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Mengenal Profil & Perjalanan Saya</h2>
+                <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Visual Card -->
+                <div class="lg:col-span-5 bg-brand-card p-8 rounded-2xl border border-gray-800 shadow-xl relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-500/10 rounded-full filter blur-xl group-hover:bg-indigo-500/20 transition-all"></div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Siapa saya sebenarnya?</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Saya adalah mahasiswa aktif di bidang teknologi informasi yang fokus mempelajari arsitektur kode program, optimalisasi sistem, dan juga mengelola infrastruktur jaringan fisik maupun virtual.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Pendidikan</h4>
+                                <p class="text-xs text-gray-400">Teknik Informatika, Universitas Pamulang Tangerang Selatan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Lokasi Saat Ini</h4>
+                                <p class="text-xs text-gray-400">Tangerang Selatan, Banten</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Expertise -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-bold text-white">Keahlian & Bidang Fokus</h3>
+                    <p class="text-gray-400">Berikut adalah pengelompokan keahlian teknis saya beserta aktivitas pribadi sebagai penyeimbang keseharian hidup:</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <!-- C++ -->
+                        <div class="p-4 bg-brand-card rounded-xl border border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col space-y-2">
+                            <div class="flex items-center space-x-2 text-blue-400">
+                                <i class="fa-solid fa-code text-xl"></i>
+                                <span class="font-bold text-white">C++</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Struktur Data, OOP</span>
+                        </div>
+                        <!-- Python -->
+                        <div class="p-4 bg-brand-card rounded-xl border border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col space-y-2">
+                            <div class="flex items-center space-x-2 text-yellow-400">
+                                <i class="fa-brands fa-python text-xl"></i>
+                                <span class="font-bold text-white">Python</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Automasi & Data</span>
+                        </div>
+                        <!-- HTML5 & CSS3 -->
+                        <div class="p-4 bg-brand-card rounded-xl border border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col space-y-2">
+                            <div class="flex items-center space-x-2 text-orange-500">
+                                <i class="fa-brands fa-html5 text-xl"></i>
+                                <span class="font-bold text-white">HTML5</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Web Sederhana</span>
+                        </div>
+                        <!-- Teknik Jaringan -->
+                        <div class="p-4 bg-[#111827] rounded-xl border border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col space-y-2">
+                            <div class="flex items-center space-x-2 text-cyan-400">
+                                <i class="fa-solid fa-network-wired text-xl"></i>
+                                <span class="font-bold text-white">Jaringan</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Routing & Switching</span>
+                        </div>
+                        <!-- Memasak -->
+                        <div class="p-4 bg-brand-card rounded-xl border border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col space-y-2">
+                            <div class="flex items-center space-x-2 text-emerald-400">
+                                <i class="fa-solid fa-utensils text-xl"></i>
+                                <span class="font-bold text-white">Memasak</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Eksperimen Resep</span>
+                        </div>
+                        <!-- Berenang -->
+                        <div class="p-4 bg-brand-card rounded-xl border border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col space-y-2">
+                            <div class="flex items-center space-x-2 text-indigo-400">
+                                <i class="fa-solid fa-person-swimming text-xl"></i>
+                                <span class="font-bold text-white">Berenang</span>
+                            </div>
+                            <span class="text-xs text-gray-400">Kesehatan & Stamina</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO PROJECTS -->
+    <section id="projects" class="py-24 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-indigo-400 font-semibold tracking-wider uppercase text-sm">Portofolio Karya</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Proyek Terbaru & Terpilih</h2>
+                <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterProjects('all')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-indigo-500 bg-indigo-600 text-white transition-all shadow-md">Semua</button>
+                <button onclick="filterProjects('se')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-gray-800 bg-transparent text-gray-400 hover:border-indigo-500 hover:text-white transition-all">Software Engineering</button>
+                <button onclick="filterProjects('network')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-gray-800 bg-transparent text-gray-400 hover:border-indigo-500 hover:text-white transition-all">Teknik Jaringan</button>
+                <button onclick="filterProjects('hobby')" class="filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-gray-800 bg-transparent text-gray-400 hover:border-indigo-500 hover:text-white transition-all">Minat & Hobi</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1 (C++) -->
+                <div class="project-card bg-brand-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-indigo-500/50 transition-all duration-300" data-category="se">
+                    <div class="relative overflow-hidden aspect-video bg-[#0b0f19] flex items-center justify-center">
+                        <i class="fa-solid fa-terminal text-5xl text-blue-400 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-blue-400 tracking-wider uppercase">Software Engineering</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:text-indigo-400 transition-colors">Sistem Kasir Berbasis CLI C++</h3>
+                        <p class="text-gray-400 text-sm mt-2">Sistem manajemen stok barang dan transaksi kasir menggunakan alur data dynamic array dalam C++ guna mencapai kecepatan eksekusi tinggi.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-gray-800 px-3 py-1 rounded text-gray-300 font-medium">C++, Data Structures</span>
+                            <span class="text-indigo-400 text-sm font-semibold flex items-center gap-1">Proyek Selesai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Python) -->
+                <div class="project-card bg-brand-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-indigo-500/50 transition-all duration-300" data-category="se">
+                    <div class="relative overflow-hidden aspect-video bg-[#0b0f19] flex items-center justify-center">
+                        <i class="fa-brands fa-python text-5xl text-yellow-400 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-yellow-400 tracking-wider uppercase">Software Engineering</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:text-purple-400 transition-colors">Bot Script Automasi Backup</h3>
+                        <p class="text-gray-400 text-sm mt-2">Script Python untuk melakukan automasi penjadwalan backup database dan pengiriman log status secara berkala melalui webhook.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-gray-800 px-3 py-1 rounded text-gray-300 font-medium">Python, OS, Requests</span>
+                            <span class="text-purple-400 text-sm font-semibold flex items-center gap-1">Source Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Network) -->
+                <div class="project-card bg-brand-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-indigo-500/50 transition-all duration-300" data-category="network">
+                    <div class="relative overflow-hidden aspect-video bg-[#0b0f19] flex items-center justify-center">
+                        <i class="fa-solid fa-server text-5xl text-cyan-400 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-cyan-400 tracking-wider uppercase">Teknik Jaringan</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Lab Rancang Bangun VLAN & Routing</h3>
+                        <p class="text-gray-400 text-sm mt-2">Simulasi implementasi manajemen bandwidth dan pembagian segmentasi IP Address menggunakan teknologi VLAN serta Inter-VLAN Routing.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-gray-800 px-3 py-1 rounded text-gray-300 font-medium">Cisco Packet Tracer</span>
+                            <span class="text-pink-400 text-sm font-semibold flex items-center gap-1">Desain Topologi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 (Hobby/HTML) -->
+                <div class="project-card bg-brand-card rounded-2xl overflow-hidden border border-gray-800 group hover:border-indigo-500/50 transition-all duration-300" data-category="hobby">
+                    <div class="relative overflow-hidden aspect-video bg-[#0b0f19] flex items-center justify-center">
+                        <i class="fa-solid fa-kitchen-set text-5xl text-emerald-400 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-emerald-400 tracking-wider uppercase">Minat & Hobi</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:text-emerald-400 transition-colors">Katalog Resep & Resep Masakan Web</h3>
+                        <p class="text-gray-400 text-sm mt-2">Halaman statis interaktif yang dirancang dengan HTML & CSS murni guna menampilkan menu resep hidangan Nusantara favorit saya.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-xs bg-gray-800 px-3 py-1 rounded text-gray-300 font-medium">HTML5, CSS3, Vanilla JS</span>
+                            <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1">Live Demo</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE / TIMELINE -->
+    <section id="experience" class="py-24 bg-[#0a0e1a] reveal">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-indigo-400 font-semibold tracking-wider uppercase text-sm">Karir & Pendidikan</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Lini Masa Pengalaman Saya</h2>
+                <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="relative border-l border-gray-800 pl-6 ml-4 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative">
+                    <!-- Marker Bullet -->
+                    <div class="absolute -left-10 top-1.5 w-7 h-7 rounded-full bg-brand-card border-4 border-indigo-500 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 bg-indigo-500/20 text-indigo-400 rounded-md">Pendidikan Saat Ini</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Pendidikan IT (Teknik Informatika)</h3>
+                    <h4 class="text-sm font-medium text-gray-400 mb-2">Universitas Pamulang, Tangerang Selatan</h4>
+                    <p class="text-gray-400 text-sm">Mendalami rekayasa perangkat lunak, pemrograman komputer dasar, algoritma, serta administrasi teknologi informasi guna menguatkan dasar keilmuan teknologi informasi.</p>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative">
+                    <!-- Marker Bullet -->
+                    <div class="absolute -left-10 top-1.5 w-7 h-7 rounded-full bg-brand-card border-4 border-purple-500 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 bg-purple-500/20 text-purple-400 rounded-md">2024</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Magang Teknik Jaringan Komputer</h3>
+                    <h4 class="text-sm font-medium text-gray-400 mb-2">Salah Satu Kampus di Purwokerto</h4>
+                    <p class="text-gray-400 text-sm">Berpartisipasi aktif dalam memantau kestabilan jaringan internet kampus, melakukan perbaikan crimping kabel LAN, penataan patch panel di ruang server, serta penanganan kendala koneksi harian pengguna.</p>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative">
+                    <!-- Marker Bullet -->
+                    <div class="absolute -left-10 top-1.5 w-7 h-7 rounded-full bg-brand-card border-4 border-emerald-500 flex items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded-md">Aktivitas Seimbang</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Hobi & Kegiatan Personal</h3>
+                    <h4 class="text-sm font-medium text-gray-400 mb-2">Mengolah Masakan & Berenang Secara Rutin</h4>
+                    <p class="text-gray-400 text-sm">Sebagai penyeimbang dari ketatnya jam belajar pemrograman komputer, saya melatih ketelitian rasa lewat hobi memasak di waktu luang serta memelihara kebugaran fisik jasmani dengan berenang.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-indigo-400 font-semibold tracking-wider uppercase text-sm">Kontak</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Hubungi Saya Secara Langsung</h2>
+                <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-2xl font-bold text-white">Ada ide kolaborasi atau ingin berdiskusi?</h3>
+                    <p class="text-gray-400">
+                        Saya selalu terbuka terhadap diskusi proyek baru, kolaborasi pemecahan kode, konsultasi infrastruktur jaringan sederhana, maupun bertukar info resep masakan menarik.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-[#111827] border border-gray-800 rounded-xl flex items-center justify-center text-indigo-400 text-lg">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-gray-500">ALAMAT EMAIL</h4>
+                                <p class="text-sm font-semibold text-white">irgiawanalbukhori67@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-[#111827] border border-gray-800 rounded-xl flex items-center justify-center text-indigo-400 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-gray-500">TELEPON / WHATSAPP</h4>
+                                <p class="text-sm font-semibold text-white">+62 85602988359</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="pt-6">
+                        <p class="text-sm text-gray-400 mb-3">Ikuti media sosial saya:</p>
+                        <div class="flex space-x-3">
+                            <a href="https://youtube.com/@IrgiawanAlbukhori" class="w-10 h-10 bg-[#111827] hover:bg-indigo-600 hover:text-white text-gray-400 border border-gray-800 rounded-lg flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://lynk.id/irgiawan" class="w-10 h-10 bg-[#111827] hover:bg-indigo-600 hover:text-white text-gray-400 border border-gray-800 rounded-lg flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/albukhori6233" class="w-10 h-10 bg-[#111827] hover:bg-indigo-600 hover:text-white text-gray-400 border border-gray-800 rounded-lg flex items-center justify-center transition-all">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Form -->
+                <div class="lg:col-span-7 bg-brand-card p-8 rounded-2xl border border-gray-800 shadow-xl">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" required class="w-full bg-[#070a13] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Alamat Email</label>
+                                <input type="email" id="email" required class="w-full bg-[#070a13] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Subjek Pesan</label>
+                            <input type="text" id="subject" required class="w-full bg-[#070a13] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Pesan Anda</label>
+                            <textarea id="message" rows="5" required class="w-full bg-[#070a13] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-lg shadow-indigo-600/20 transition-all flex items-center justify-center gap-2">
+                            Kirim Pesan Sekarang <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Alert Modal -->
+                    <div id="success-alert" class="hidden mt-6 p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-lg flex items-center gap-3">
+                        <i class="fa-regular fa-circle-check text-xl"></i>
+                        <div>
+                            <p class="font-bold">Pesan berhasil terkirim!</p>
+                            <p class="text-xs text-emerald-500/80">Terima kasih, saya akan membaca pesan Anda dan membalasnya sesegera mungkin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 bg-[#050810] py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-gray-500">© 2026 Portofolio Saya. Seluruh hak cipta dilindungi undang-undang.</p>
+            <p class="text-sm text-gray-500">Dibuat dengan <i class="fa-solid fa-heart text-red-500 animate-pulse"></i> & <a href="#" class="text-indigo-400">Tailwind CSS</a></p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT & INTERACTION LOGIC -->
+    <script>
+        // 1. MOBILE MENU DRAWER TOGGLE
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Fallback handler if irgi.jpg is missing
+        function handleImageError() {
+            const img = document.getElementById('profile-img');
+            const fallback = document.getElementById('avatar-fallback');
+            if (img) img.style.display = 'none';
+            if (fallback) fallback.classList.remove('hidden');
+        }
+
+        // 2. HERO TYPING ANIMATION EFFECT
+        const words = ["Pengembang C++", "Network Technician", "Penggemar Hobi yang Sehat"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const erasingSpeed = 50;
+        const delayBetweenWords = 2000;
+        const typingElement = document.getElementById('typing-text');
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, delayBetweenWords);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 1000);
+            reveal(); // Panggilan awal animasi scroll
+        });
+
+        // 3. PROJECT FILTER SYSTEM
+        function filterProjects(category) {
+            // Perbarui gaya tombol yang aktif
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.className = "filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-gray-800 bg-transparent text-gray-400 hover:border-indigo-500 hover:text-white transition-all";
+            });
+
+            // Target elemen event pemicu
+            event.target.className = "filter-btn px-6 py-2 rounded-full text-sm font-semibold border border-indigo-500 bg-indigo-600 text-white transition-all shadow-md";
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = "block";
+                } else if (card.getAttribute('data-category') === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // 4. SCROLL ANIMATION (FADE-IN UPON SCROLL)
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 120;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        // 5. CONTACT FORM INTERACTION
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Mengirim...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Tampilkan notifikasi berhasil
+                const alertEl = document.getElementById('success-alert');
+                alertEl.classList.remove('hidden');
+                
+                // Kosongkan formulir
+                document.getElementById('contact-form').reset();
+                
+                // Sembunyikan notifikasi setelah 5 detik
+                setTimeout(() => {
+                    alertEl.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
